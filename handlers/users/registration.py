@@ -26,7 +26,7 @@ async def registration_start(message: types.Message):
 
 
 @dp.message_handler(commands=["1"])
-async def registration_start(message: types.Message):
+async def registration_startOne(message: types.Message):
     await message.answer(text='Введите секунд задержки Для первого сообщения:')
     await UserStates.Ping.set()
 
@@ -42,13 +42,13 @@ async def process_number(message: types.Message, state: FSMContext):
 
 
 @dp.message_handler(commands=["2"])
-async def registration_start(message: types.Message):
+async def registration_startTwo(message: types.Message):
     await message.answer(text='Введите секунд задержки с 2-10 сообщения:')
     await UserStates.PingTwo.set()
 
 
 @dp.message_handler(state=UserStates.PingTwo)
-async def process_number(message: types.Message, state: FSMContext):
+async def process_numberTwo(message: types.Message, state: FSMContext):
     try:
         CONFIG.PINGTWO = Decimal(message.text)
         await state.finish()
