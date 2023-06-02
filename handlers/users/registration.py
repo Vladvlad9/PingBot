@@ -10,8 +10,9 @@ from states.users.userState import UserStates
 
 
 @dp.message_handler(commands=["start"], state=UserStates.all_states)
-async def registration_start_two(message: types.Message):
+async def registration_start_two(message: types.Message, state: FSMContext):
     await message.delete()
+    await state.finish()
     await message.answer(f'Отмена')
 
 
