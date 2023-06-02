@@ -4,5 +4,6 @@
     "ADMINS": [381252111]
   },
   "DATABASE": "postgres:postgres@localhost:5432/impuls",
-  "PING": 1.5
+  "PING": 1.5,
+  "PINGTWO": 1.5
 }

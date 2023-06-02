@@ -11,3 +11,4 @@ class ConfigSchema(BaseModel):
     BOT: BotSchema
     DATABASE: str
     PING: Decimal
+    PINGTWO: Decimal
